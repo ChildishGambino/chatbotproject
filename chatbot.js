@@ -1,10 +1,15 @@
 /*~~~~~~~~~~~~ ChefBot by Clayton Lett~~~~~~~~~~~~~ */
 
 /*////////////////////////////////////////////////////*/
+/*~~~~~~~~~~~~~~~~ DATE AND TIME LOGIC ~~~~~~~~~~~~~~~*/
+/*////////////////////////////////////////////////////*/
+var now = new Date(Date.now());
+
+/*////////////////////////////////////////////////////*/
 /*~~~~~~~~~~~~~~z Question/Response Logic~~~~~~~~~~~~~~~ */
 /*////////////////////////////////////////////////////*/
 
-function askQuestion(){
+function talk(){
 
  var question = document.getElementById("input").value;
  var giveresponse = responses[question]
@@ -27,12 +32,17 @@ var responses = {
  "What color is your hair?" : "black",
  "What color are your eyes?" : "brown",
  "Are you tall?" : "Yes",
+ "What time is it?" : now
 }
 
 /*////////////////////////////////////////////////////*/
 /*~~~~~~~~~~~~~~~~ FALLBACK RESPONSES ~~~~~~~~~~~~~~~~*/
 /*////////////////////////////////////////////////////*/
+var fallBackResponse = ["i do not understand ask another question"];
+if (question == undefined){
+  document.getElementById("chat-area").innerHTML += fallBackResponse +  " " + "<br>";
 
+}
 
 
 
